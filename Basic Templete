@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 #define ll                long long
 #define ld                long double
+#define fi                first
+#define se                second
 #define pb                push_back
 #define ppb               pop_back
 #define pf                push_front
@@ -16,7 +18,7 @@
 #define watch(x)          cout << (#x) << " is " << (x) << endl
 using namespace std;
 
-long long binpowM(long long a, long long b, long long m) {
+long long powM(long long a, long long b, long long m) {
     a %= m;
     long long res = 1;
     while (b > 0) {
@@ -28,27 +30,28 @@ long long binpowM(long long a, long long b, long long m) {
     return res;
 }
 
+// GCD(A,B) = GCD(B,A-B) -> here A>=B or GCD(A,B) = GCD(B-A,A) -> here A<=B
 ll gcd(ll a, ll b) { if (b == 0) {return a;} return gcd(b, a % b);}
-ll modinv(ll a, ll m) { return binpowM(a, m - 2, m);}
+ll modinv(ll a, ll m) { return powM(a, m - 2, m);}
 ll mod_add(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a + b) % m) + m) % m;}
 ll mod_mul(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
 ll moddiv(ll a, ll b, ll m) {a = a % m; b = b % m; 
-return (mod_mul(a, modinv(b, m), m) + m) % m;}  //m is prime
+return (mod_mul(a, modinv(b, m), m) + m) % m;}//m is prime
 
 const long long INF=1e18;
 const int32_t M=1e9+7;
 const int32_t MM=998244353;
 
 void solve(){
-
+    
 
 }
 
 signed main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(0);
-    cout << setprecision(15) << fixed;
-    int t=1;
+    cout.precision(20), cout.setf(ios::fixed);
+    int t=1;  
     cin>>t;
     while(t--){
         solve();
